@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Family Migrations – Alejandro Jiménez Rivero</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1209;
+    --parchment: #f5edda;
+    --aged: #e8d9b8;
+    --sepia: #b08a50;
+    --rust: #a63d2f;
+    --gold: #c9922b;
+    --olive: #5c6b3a;
+    --slate: #3d5166;
+    --cream: #fdf8ee;
+    --shadow: rgba(26,18,9,0.18);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Crimson Text', Georgia, serif;
+    background: var(--cream);
+    color: var(--ink);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ── BACKGROUND TEXTURE ── */
+  body::before {
+    content: '';
+    position: fixed; inset: 0; z-index: 0;
+    background-image:
+      radial-gradient(ellipse at 20% 20%, rgba(176,138,80,0.08) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 80%, rgba(61,81,102,0.07) 0%, transparent 55%),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative; z-index: 1;
+    background: linear-gradient(160deg, #1a1209 0%, #2e1f0d 45%, #3d2e10 100%);
+    padding: 80px 40px 100px;
+    text-align: center;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Ccircle cx='30' cy='30' r='1' fill='%23c9922b' opacity='0.15'/%3E%3Ccircle cx='0' cy='0' r='1' fill='%23c9922b' opacity='0.1'/%3E%3Ccircle cx='60' cy='60' r='1' fill='%23c9922b' opacity='0.1'/%3E%3C/svg%3E");
+    opacity: 0.6;
+  }
+  .hero-compass {
+    font-size: 3.5rem; margin-bottom: 18px;
+    animation: spin-slow 20s linear infinite;
+    display: inline-block;
+  }
+  @keyframes spin-slow { to { transform: rotate(360deg); } }
+
+  .hero-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.75rem; letter-spacing: 0.35em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 16px; position: relative;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.4rem, 6vw, 4.5rem);
+    font-weight: 900; color: var(--parchment);
+    line-height: 1.05; position: relative;
+    text-shadow: 0 4px 24px rgba(0,0,0,0.5);
+  }
+  .hero h1 em {
+    color: var(--gold); font-style: italic;
+  }
+  .hero-sub {
+    font-family: 'Crimson Text', serif;
+    font-size: 1.25rem; color: rgba(245,237,218,0.65);
+    margin-top: 14px; position: relative;
+    letter-spacing: 0.03em;
+  }
+  .hero-line {
+    width: 60px; height: 2px;
+    background: var(--gold);
+    margin: 28px auto 0;
+    position: relative;
+  }
+
+  /* ── INTRO BOX ── */
+  .intro-section {
+    position: relative; z-index: 1;
+    max-width: 860px; margin: -40px auto 0;
+    padding: 0 24px;
+  }
+  .intro-card {
+    background: var(--parchment);
+    border: 1.5px solid var(--sepia);
+    border-radius: 2px;
+    padding: 36px 44px;
+    box-shadow: 0 12px 48px var(--shadow), inset 0 0 0 6px rgba(176,138,80,0.06);
+    position: relative;
+  }
+  .intro-card::before {
+    content: '❡';
+    position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
+    background: var(--parchment); padding: 0 10px;
+    font-size: 1.4rem; color: var(--gold);
+  }
+  .intro-card p {
+    font-size: 1.13rem; line-height: 1.8;
+    color: #3a2c12;
+  }
+
+  /* ── SECTION TITLES ── */
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+    font-weight: 700; text-align: center;
+    color: var(--ink); margin: 70px 0 8px;
+    position: relative; z-index: 1;
+  }
+  .section-title span { color: var(--rust); font-style: italic; }
+  .section-rule {
+    width: 80px; height: 3px;
+    background: linear-gradient(90deg, var(--gold), var(--rust));
+    margin: 0 auto 50px;
+    position: relative; z-index: 1;
+  }
+
+  /* ── TIMELINE ── */
+  .timeline-wrapper {
+    position: relative; z-index: 1;
+    max-width: 980px; margin: 0 auto;
+    padding: 0 24px 60px;
+  }
+  .timeline-axis {
+    position: absolute;
+    left: 50%; transform: translateX(-50%);
+    top: 0; bottom: 0; width: 2px;
+    background: linear-gradient(to bottom, var(--gold), var(--sepia), var(--slate));
+    opacity: 0.35;
+  }
+
+  /* ── MIGRATION CARDS ── */
+  .migration {
+    display: flex;
+    gap: 32px;
+    margin-bottom: 56px;
+    position: relative;
+    opacity: 0; transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .migration.visible { opacity: 1; transform: translateY(0); }
+  .migration:nth-child(odd) { flex-direction: row; }
+  .migration:nth-child(even) { flex-direction: row-reverse; }
+
+  .migration-side {
+    flex: 1;
+    display: flex;
+    align-items: flex-start;
+  }
+  .migration:nth-child(odd) .migration-side { justify-content: flex-end; }
+  .migration:nth-child(even) .migration-side { justify-content: flex-start; }
+
+  .migration-dot-wrapper {
+    position: absolute; left: 50%; transform: translateX(-50%);
+    top: 22px;
+    width: 44px; height: 44px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .migration-dot {
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.3rem;
+    border: 3px solid var(--parchment);
+    box-shadow: 0 0 0 2px currentColor, 0 4px 12px var(--shadow);
+    cursor: pointer;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    z-index: 2; position: relative;
+  }
+  .migration-dot:hover { transform: scale(1.15); box-shadow: 0 0 0 3px currentColor, 0 8px 20px var(--shadow); }
+
+  .card {
+    background: var(--parchment);
+    border-radius: 2px;
+    border: 1.5px solid var(--sepia);
+    padding: 28px 30px;
+    max-width: 400px;
+    box-shadow: 4px 6px 24px var(--shadow);
+    position: relative;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    cursor: default;
+  }
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 6px 12px 36px var(--shadow);
+  }
+
+  /* era stripe on top */
+  .card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0;
+    height: 4px; border-radius: 2px 2px 0 0;
+    background: var(--card-accent, var(--sepia));
+  }
+
+  .card-era {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.68rem; letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--card-accent, var(--sepia)); margin-bottom: 6px;
+  }
+  .card-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.35rem; font-weight: 700; color: var(--ink);
+    margin-bottom: 2px;
+  }
+  .card-relation {
+    font-size: 0.95rem; color: var(--sepia);
+    font-style: italic; margin-bottom: 14px;
+  }
+  .card-route {
+    display: flex; align-items: center; gap: 8px;
+    font-size: 1rem; font-weight: 600; color: var(--ink);
+    margin-bottom: 12px; flex-wrap: wrap;
+  }
+  .card-route .arrow { color: var(--gold); font-size: 1.1rem; }
+  .card-body { font-size: 1.02rem; line-height: 1.72; color: #3a2c12; }
+  .card-tags {
+    display: flex; flex-wrap: wrap; gap: 6px;
+    margin-top: 16px;
+  }
+  .tag {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.7rem; letter-spacing: 0.08em;
+    padding: 3px 10px; border-radius: 2px;
+    font-weight: 500;
+  }
+  .tag-vol { background: rgba(92,107,58,0.14); color: var(--olive); border: 1px solid rgba(92,107,58,0.3); }
+  .tag-forced { background: rgba(166,61,47,0.12); color: var(--rust); border: 1px solid rgba(166,61,47,0.3); }
+  .tag-int { background: rgba(61,81,102,0.12); color: var(--slate); border: 1px solid rgba(61,81,102,0.3); }
+  .tag-nat { background: rgba(201,146,43,0.13); color: #7a5500; border: 1px solid rgba(201,146,43,0.35); }
+  .tag-temp { background: rgba(140,80,140,0.1); color: #663388; border: 1px solid rgba(140,80,140,0.25); }
+  .tag-def { background: rgba(26,18,9,0.08); color: #3a2c12; border: 1px solid rgba(26,18,9,0.2); }
+  .tag-hist { background: rgba(176,138,80,0.18); color: #5c3a00; border: 1px solid rgba(176,138,80,0.4); }
+
+  .card-detail-btn {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.78rem; letter-spacing: 0.1em;
+    text-transform: uppercase; text-decoration: none;
+    color: var(--card-accent, var(--sepia));
+    border: 1px solid var(--card-accent, var(--sepia));
+    padding: 5px 14px; border-radius: 1px;
+    display: inline-block; margin-top: 14px;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    background: transparent;
+  }
+  .card-detail-btn:hover {
+    background: var(--card-accent, var(--sepia));
+    color: var(--parchment);
+  }
+
+  /* ── MODAL ── */
+  .modal-overlay {
+    position: fixed; inset: 0; z-index: 1000;
+    background: rgba(26,18,9,0.72);
+    backdrop-filter: blur(4px);
+    display: flex; align-items: center; justify-content: center;
+    padding: 24px;
+    opacity: 0; pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+  .modal-overlay.open { opacity: 1; pointer-events: all; }
+  .modal {
+    background: var(--cream);
+    border: 2px solid var(--sepia);
+    border-radius: 2px;
+    max-width: 680px; width: 100%;
+    max-height: 90vh; overflow-y: auto;
+    box-shadow: 0 32px 80px rgba(0,0,0,0.5);
+    transform: translateY(30px) scale(0.97);
+    transition: transform 0.3s ease;
+    position: relative;
+  }
+  .modal-overlay.open .modal { transform: translateY(0) scale(1); }
+  .modal-header {
+    padding: 32px 36px 24px;
+    border-bottom: 1px solid var(--aged);
+    position: relative;
+  }
+  .modal-close {
+    position: absolute; top: 18px; right: 20px;
+    background: none; border: none; font-size: 1.5rem;
+    cursor: pointer; color: var(--sepia);
+    line-height: 1;
+    transition: color 0.2s;
+  }
+  .modal-close:hover { color: var(--rust); }
+  .modal-body { padding: 28px 36px 36px; }
+  .modal-section { margin-bottom: 22px; }
+  .modal-section h4 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.72rem; letter-spacing: 0.25em; text-transform: uppercase;
+    color: var(--sepia); margin-bottom: 6px;
+  }
+  .modal-section p {
+    font-size: 1.05rem; line-height: 1.75; color: #3a2c12;
+  }
+  .modal-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  .modal-fact {
+    background: var(--aged);
+    padding: 12px 16px; border-radius: 1px;
+  }
+  .modal-fact .label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.65rem; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--sepia);
+    display: block; margin-bottom: 3px;
+  }
+  .modal-fact .value {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem; font-weight: 600; color: var(--ink);
+  }
+  .hist-box {
+    background: linear-gradient(135deg, #2e1f0d, #1a1209);
+    color: var(--parchment);
+    padding: 18px 22px; border-radius: 1px;
+    margin-top: 20px;
+  }
+  .hist-box h4 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.68rem; letter-spacing: 0.25em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 8px;
+  }
+  .hist-box p { font-size: 1rem; line-height: 1.7; color: rgba(245,237,218,0.85); }
+
+  /* ── STATS BAR ── */
+  .stats-section {
+    position: relative; z-index: 1;
+    background: linear-gradient(135deg, #2e1f0d, #1e1508);
+    padding: 60px 24px;
+    margin: 20px 0;
+  }
+  .stats-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 32px; max-width: 900px; margin: 0 auto; text-align: center;
+  }
+  .stat-item {}
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem; font-weight: 900; color: var(--gold);
+    line-height: 1;
+  }
+  .stat-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.78rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: rgba(245,237,218,0.55); margin-top: 8px;
+  }
+
+  /* ── MAP SECTION ── */
+  .map-section {
+    position: relative; z-index: 1;
+    max-width: 900px; margin: 0 auto 60px;
+    padding: 0 24px;
+  }
+  .map-container {
+    background: var(--parchment);
+    border: 1.5px solid var(--sepia);
+    border-radius: 2px;
+    padding: 12px;
+    box-shadow: 0 8px 32px var(--shadow);
+    overflow: hidden;
+  }
+  .map-container svg { width: 100%; height: auto; display: block; }
+
+  /* ── CLASSIFICATION TABLE ── */
+  .class-section {
+    position: relative; z-index: 1;
+    max-width: 900px; margin: 0 auto 80px;
+    padding: 0 24px;
+    overflow-x: auto;
+  }
+  table {
+    width: 100%; border-collapse: collapse;
+    font-size: 0.92rem;
+    background: var(--parchment);
+    border: 1.5px solid var(--sepia);
+    box-shadow: 0 6px 24px var(--shadow);
+  }
+  thead tr { background: #2e1f0d; color: var(--parchment); }
+  thead th {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase;
+    padding: 14px 16px; font-weight: 500;
+    color: var(--gold); text-align: left;
+  }
+  tbody tr { border-bottom: 1px solid var(--aged); transition: background 0.2s; }
+  tbody tr:hover { background: var(--aged); }
+  tbody td { padding: 12px 16px; line-height: 1.5; vertical-align: top; }
+  td:first-child { font-family: 'Playfair Display', serif; font-weight: 600; }
+  .type-badge {
+    display: inline-block; padding: 2px 8px; border-radius: 2px;
+    font-family: 'DM Sans', sans-serif; font-size: 0.65rem;
+    letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    position: relative; z-index: 1;
+    background: var(--ink);
+    padding: 48px 24px;
+    text-align: center;
+  }
+  footer .author {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem; font-weight: 700; color: var(--gold);
+    margin-bottom: 8px;
+  }
+  footer .meta {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: rgba(245,237,218,0.4);
+  }
+  footer .ornament { font-size: 1.8rem; color: var(--gold); margin: 16px 0; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 680px) {
+    .timeline-axis { display: none; }
+    .migration, .migration:nth-child(even) { flex-direction: column !important; gap: 16px; }
+    .migration-dot-wrapper { display: none; }
+    .card { max-width: 100%; }
+    .migration-side, .migration:nth-child(odd) .migration-side,
+    .migration:nth-child(even) .migration-side { justify-content: flex-start; }
+    .modal-grid { grid-template-columns: 1fr; }
+    .modal-body, .modal-header { padding: 20px 22px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ─── HERO ─────────────────────────────────── -->
+<header class="hero">
+  <div class="hero-compass">🧭</div>
+  <div class="hero-label">A Family History &nbsp;·&nbsp; Geography &amp; Social Studies</div>
+  <h1>My Family<br><em>Migrations</em></h1>
+  <p class="hero-sub">Six journeys across time, continents and memory</p>
+  <div class="hero-line"></div>
+</header>
+
+<!-- ─── INTRO ─────────────────────────────────── -->
+<section class="intro-section">
+  <div class="intro-card">
+    <p>Migration is any displacement that involves a <strong>change of permanent residence</strong>, whether across borders, regions, or provinces. My family's story spans more than a century of movement: from the great transatlantic voyages of the early twentieth century to today's graduate students crossing European cities with a laptop and a suitcase. Each journey was shaped by its era's politics, economics, and hopes. Together, they form a living atlas of Spanish — and human — migration.</p>
+  </div>
+</section>
+
+<!-- ─── STATS ─────────────────────────────────── -->
+<div class="stats-section">
+  <div class="stats-grid">
+    <div class="stat-item">
+      <div class="stat-num">6</div>
+      <div class="stat-label">Family Migrations</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">4</div>
+      <div class="stat-label">Historical Periods</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">7</div>
+      <div class="stat-label">Countries Reached</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">110+</div>
+      <div class="stat-label">Years of History</div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── TIMELINE ─────────────────────────────── -->
+<h2 class="section-title">The <span>Timeline</span> of Journeys</h2>
+<div class="section-rule"></div>
+
+<div class="timeline-wrapper">
+  <div class="timeline-axis"></div>
+
+  <!-- MIGRATION 1 -->
+  <div class="migration" id="m1">
+    <div class="migration-side">
+      <div class="card" style="--card-accent: #8b4513;">
+        <div class="card-era">c. 1912 &nbsp;·&nbsp; Transoceanic Wave</div>
+        <div class="card-name">Manuel Jiménez García</div>
+        <div class="card-relation">Great-great-grandfather · Bisabuelo</div>
+        <div class="card-route">
+          <span>Cáceres, Extremadura</span>
+          <span class="arrow">→</span>
+          <span>Buenos Aires, Argentina 🇦🇷</span>
+        </div>
+        <div class="card-body">Aged around 22, Manuel left during the wave of Spanish emigration to the River Plate. He worked on a cattle estancia in the province of Buenos Aires and later opened a small grocery with fellow emigrants from Extremadura. He never returned.</div>
+        <div class="card-tags">
+          <span class="tag tag-vol">Voluntary</span>
+          <span class="tag tag-int">International</span>
+          <span class="tag tag-def">Permanent</span>
+          <span class="tag tag-hist">Transoceanic Migration</span>
+        </div>
+        <button class="card-detail-btn" onclick="openModal('m1')">View full details</button>
+      </div>
+    </div>
+    <div class="migration-dot-wrapper">
+      <div class="migration-dot" style="background:#8b4513; color:#f5edda;" title="1912 – Buenos Aires">⛵</div>
+    </div>
+    <div class="migration-side"></div>
+  </div>
+
+  <!-- MIGRATION 2 -->
+  <div class="migration" id="m2">
+    <div class="migration-side"></div>
+    <div class="migration-dot-wrapper">
+      <div class="migration-dot" style="background:#5c6b3a; color:#f5edda;" title="1952 – Madrid">🌾</div>
+    </div>
+    <div class="migration-side">
+      <div class="card" style="--card-accent: #5c6b3a;">
+        <div class="card-era">c. 1952 &nbsp;·&nbsp; Rural Exodus</div>
+        <div class="card-name">Rosario Rivero Campos</div>
+        <div class="card-relation">Great-grandmother · Bisabuela</div>
+        <div class="card-route">
+          <span>Malpartida de Cáceres</span>
+          <span class="arrow">→</span>
+          <span>Madrid, Comunidad de Madrid 🇪🇸</span>
+        </div>
+        <div class="card-body">Widowed at 38, Rosario moved with her three children to Madrid's working-class district of Vallecas. She found work as a domestic servant (empleada del hogar). The family never returned to live in Extremadura, though they visited every summer. Her move was part of the massive rural exodus that depopulated inland Spain.</div>
+        <div class="card-tags">
+          <span class="tag tag-vol">Voluntary</span>
+          <span class="tag tag-nat">National</span>
+          <span class="tag tag-def">Permanent</span>
+          <span class="tag tag-hist">Rural Exodus (Éxodo Rural)</span>
+        </div>
+        <button class="card-detail-btn" onclick="openModal('m2')">View full details</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MIGRATION 3 -->
+  <div class="migration" id="m3">
+    <div class="migration-side">
+      <div class="card" style="--card-accent: #3d5166;">
+        <div class="card-era">1964 &nbsp;·&nbsp; Guest Worker Era</div>
+        <div class="card-name">Francisco &amp; Carmen Jiménez</div>
+        <div class="card-relation">Great-uncle &amp; great-aunt · Tatarabuelo político</div>
+        <div class="card-route">
+          <span>Navalmoral de la Mata, Cáceres</span>
+          <span class="arrow">→</span>
+          <span>Stuttgart, Germany 🇩🇪</span>
+        </div>
+        <div class="card-body">Francisco signed a contract through the bilateral agreement between Spain and Germany in 1964. He worked on an assembly line at a car plant (Daimler-Benz), while Carmen cleaned in a hotel. They lived in a workers' hostel (Wohnheim) for two years before renting a flat. They retired to Spain in 1986.</div>
+        <div class="card-tags">
+          <span class="tag tag-vol">Voluntary</span>
+          <span class="tag tag-int">International</span>
+          <span class="tag tag-temp">Temporary (22 yrs)</span>
+          <span class="tag tag-hist">Migration to Western Europe</span>
+        </div>
+        <button class="card-detail-btn" onclick="openModal('m3')">View full details</button>
+      </div>
+    </div>
+    <div class="migration-dot-wrapper">
+      <div class="migration-dot" style="background:#3d5166; color:#f5edda;" title="1964 – Stuttgart">🏭</div>
+    </div>
+    <div class="migration-side"></div>
+  </div>
+
+  <!-- MIGRATION 4 -->
+  <div class="migration" id="m4">
+    <div class="migration-side"></div>
+    <div class="migration-dot-wrapper">
+      <div class="migration-dot" style="background:#c9922b; color:#1a1209;" title="1983 – Barcelona">🏗️</div>
+    </div>
+    <div class="migration-side">
+      <div class="card" style="--card-accent: #c9922b;">
+        <div class="card-era">1983 &nbsp;·&nbsp; Post-Transition Spain</div>
+        <div class="card-name">Rafael Jiménez Moreno</div>
+        <div class="card-relation">Grandfather · Abuelo</div>
+        <div class="card-route">
+          <span>Cáceres city</span>
+          <span class="arrow">→</span>
+          <span>Barcelona, Catalonia 🇪🇸</span>
+        </div>
+        <div class="card-body">After the Spanish democratic transition, Rafael followed construction work to Barcelona's booming building sector. Aged 28, he moved alone first, then brought his family a year later. He became a foreman (encargado de obra) and retired in Hospitalet de Llobregat. He never returned permanently to Extremadura.</div>
+        <div class="card-tags">
+          <span class="tag tag-vol">Voluntary</span>
+          <span class="tag tag-nat">National (interregional)</span>
+          <span class="tag tag-def">Permanent</span>
+          <span class="tag tag-hist">Internal Economic Migration</span>
+        </div>
+        <button class="card-detail-btn" onclick="openModal('m4')">View full details</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MIGRATION 5 -->
+  <div class="migration" id="m5">
+    <div class="migration-side">
+      <div class="card" style="--card-accent: #a63d2f;">
+        <div class="card-era">2004 &nbsp;·&nbsp; EU Free Movement</div>
+        <div class="card-name">Lucía Rivero Sánchez</div>
+        <div class="card-relation">Aunt · Tía</div>
+        <div class="card-route">
+          <span>Cáceres city</span>
+          <span class="arrow">→</span>
+          <span>London, United Kingdom 🇬🇧</span>
+        </div>
+        <div class="card-body">With a degree in Tourism from the University of Extremadura, Lucía moved to London after Spain's entry into the Schengen zone had matured. She worked in hotel management in the City and Canary Wharf. After Brexit she obtained indefinite leave to remain. She lives in Brixton, visits family twice a year, and considers London her home.</div>
+        <div class="card-tags">
+          <span class="tag tag-vol">Voluntary</span>
+          <span class="tag tag-int">International</span>
+          <span class="tag tag-def">Permanent</span>
+          <span class="tag tag-hist">Contemporary Skilled Migration</span>
+        </div>
+        <button class="card-detail-btn" onclick="openModal('m5')">View full details</button>
+      </div>
+    </div>
+    <div class="migration-dot-wrapper">
+      <div class="migration-dot" style="background:#a63d2f; color:#f5edda;" title="2004 – London">✈️</div>
+    </div>
+    <div class="migration-side"></div>
+  </div>
+
+  <!-- MIGRATION 6 -->
+  <div class="migration" id="m6">
+    <div class="migration-side"></div>
+    <div class="migration-dot-wrapper">
+      <div class="migration-dot" style="background:#4a3575; color:#f5edda;" title="2022 – Sevilla">🎓</div>
+    </div>
+    <div class="migration-side">
+      <div class="card" style="--card-accent: #4a3575;">
+        <div class="card-era">2022 &nbsp;·&nbsp; Present Day</div>
+        <div class="card-name">Sofía Jiménez Torres</div>
+        <div class="card-relation">Cousin · Prima</div>
+        <div class="card-route">
+          <span>Cáceres city</span>
+          <span class="arrow">→</span>
+          <span>Seville, Andalusia 🇪🇸</span>
+        </div>
+        <div class="card-body">Sofía moved to Seville at 18 to study Architecture. She lives in a shared flat (piso compartido) in the Triana district. She returns to Cáceres during holiday breaks. Her migration illustrates the current attraction of large Spanish cities — especially Seville, Madrid, and Barcelona — for students from smaller Extremaduran towns and cities.</div>
+        <div class="card-tags">
+          <span class="tag tag-vol">Voluntary</span>
+          <span class="tag tag-nat">National (interregional)</span>
+          <span class="tag tag-temp">Temporary (student)</span>
+          <span class="tag tag-hist">Contemporary Student Migration</span>
+        </div>
+        <button class="card-detail-btn" onclick="openModal('m6')">View full details</button>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /timeline-wrapper -->
+
+<!-- ─── MAP ───────────────────────────────────── -->
+<h2 class="section-title">Routes on the <span>Map</span></h2>
+<div class="section-rule"></div>
+
+<div class="map-section">
+  <div class="map-container">
+    <svg viewBox="0 0 900 520" xmlns="http://www.w3.org/2000/svg" font-family="'Crimson Text', serif">
+      <defs>
+        <marker id="arr" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+          <path d="M0,0 L0,6 L6,3 z" fill="currentColor"/>
+        </marker>
+        <filter id="glow">
+          <feGaussianBlur stdDeviation="2" result="blur"/>
+          <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+        <style>
+          .route { fill:none; stroke-width:2; opacity:0.75; marker-end:url(#arr); stroke-dasharray:6,4; animation: dash 3s linear infinite; }
+          @keyframes dash { to { stroke-dashoffset: -40; } }
+          .place-dot { r:5; }
+          .place-label { font-size:12px; }
+          .origin { fill:#c9922b; }
+          .dest { fill:#3d5166; }
+        </style>
+      </defs>
+
+      <!-- ── Ocean background ── -->
+      <rect width="900" height="520" fill="#d4e8f0" rx="2"/>
+
+      <!-- ── Simplified land masses ── -->
+      <!-- Europe / Iberia -->
+      <path d="M310,60 Q350,50 420,55 Q480,52 530,70 Q560,85 550,120 Q565,145 555,180 Q560,210 540,230 Q520,250 500,260 Q480,275 460,280 Q430,290 400,285 Q370,295 340,285 Q310,270 290,250 Q270,225 265,200 Q255,170 260,140 Q265,110 285,85 Z" fill="#c8b88a" stroke="#b09060" stroke-width="1"/>
+
+      <!-- Spain detailed -->
+      <path d="M300,145 Q320,130 360,125 Q400,118 440,125 Q480,128 510,145 Q530,158 528,185 Q532,205 518,220 Q505,235 488,242 Q465,252 440,254 Q415,258 390,255 Q362,258 340,248 Q318,238 306,220 Q292,200 292,178 Q290,162 300,145 Z" fill="#a8945a" stroke="#806832" stroke-width="1.5"/>
+
+      <!-- Iberian peninsula label -->
+      <text x="410" y="200" text-anchor="middle" font-size="11" fill="#5c3a00" font-weight="bold" opacity="0.6">SPAIN</text>
+
+      <!-- France -->
+      <path d="M330,125 Q360,110 410,108 Q450,106 480,115 Q510,120 520,132 Q530,145 510,145 Q480,128 440,125 Q400,118 360,125 Q330,140 300,145 Q305,130 330,125 Z" fill="#b8a870" stroke="#8a7840" stroke-width="1"/>
+      <text x="415" y="122" text-anchor="middle" font-size="9" fill="#4a3800" opacity="0.7">France</text>
+
+      <!-- Germany -->
+      <path d="M390,60 Q430,50 470,55 Q500,58 510,80 Q515,100 505,110 Q490,118 465,115 Q440,112 415,110 Q390,108 375,95 Q365,80 375,68 Z" fill="#b8a870" stroke="#8a7840" stroke-width="1"/>
+      <text x="442" y="90" text-anchor="middle" font-size="9" fill="#4a3800" opacity="0.7">Germany</text>
+
+      <!-- UK -->
+      <path d="M290,55 Q310,45 330,50 Q340,65 330,80 Q315,90 300,85 Q285,75 285,65 Z" fill="#b8a870" stroke="#8a7840" stroke-width="1"/>
+      <text x="308" y="68" text-anchor="middle" font-size="8" fill="#4a3800" opacity="0.7">UK</text>
+
+      <!-- Africa (north) -->
+      <path d="M300,310 Q380,300 480,305 Q540,308 560,320 Q555,370 540,390 Q500,400 440,398 Q380,400 330,390 Q295,375 290,340 Z" fill="#c8b88a" stroke="#b09060" stroke-width="1"/>
+      <text x="415" y="355" text-anchor="middle" font-size="10" fill="#5c3a00" opacity="0.5">Africa</text>
+
+      <!-- South America outline -->
+      <path d="M60,220 Q90,210 120,215 Q155,218 170,240 Q185,270 180,320 Q175,380 160,420 Q140,455 115,465 Q90,470 70,450 Q45,425 40,380 Q30,330 35,280 Q38,250 60,220 Z" fill="#c8b88a" stroke="#b09060" stroke-width="1"/>
+      <text x="108" y="340" text-anchor="middle" font-size="10" fill="#5c3a00" opacity="0.5">South America</text>
+      <text x="108" y="355" text-anchor="middle" font-size="9" fill="#5c3a00" opacity="0.5">(Argentina)</text>
+
+      <!-- ── ROUTES ── -->
+      <!-- 1. Cáceres → Buenos Aires (transoceanic, brown) -->
+      <path class="route" d="M375,195 Q280,280 110,350" stroke="#8b4513" color="#8b4513"/>
+      <!-- 2. Cáceres → Madrid (internal, olive) -->
+      <path class="route" d="M378,192 Q390,185 405,185" stroke="#5c6b3a" color="#5c6b3a"/>
+      <!-- 3. Navalmoral → Stuttgart (western Europe, slate) -->
+      <path class="route" d="M365,205 Q380,170 395,140 Q415,115 445,93" stroke="#3d5166" color="#3d5166"/>
+      <!-- 4. Cáceres → Barcelona (internal, gold) -->
+      <path class="route" d="M380,194 Q420,175 480,162" stroke="#c9922b" color="#c9922b"/>
+      <!-- 5. Cáceres → London (UK, rust) -->
+      <path class="route" d="M375,192 Q340,160 330,115 Q318,85 305,70" stroke="#a63d2f" color="#a63d2f"/>
+      <!-- 6. Cáceres → Seville (internal, purple) -->
+      <path class="route" d="M377,198 Q370,215 360,225 Q345,238 332,242" stroke="#4a3575" color="#4a3575"/>
+
+      <!-- ── PLACE DOTS ── -->
+      <!-- Cáceres (origin hub) -->
+      <circle cx="377" cy="195" r="7" fill="#c9922b" stroke="#fff" stroke-width="2" filter="url(#glow)"/>
+      <text x="377" y="188" text-anchor="middle" font-size="10" fill="#5c3a00" font-weight="bold">Cáceres</text>
+
+      <!-- Madrid -->
+      <circle cx="408" cy="184" r="5" fill="#5c6b3a" stroke="#fff" stroke-width="1.5"/>
+      <text x="418" y="180" font-size="9" fill="#3a4a20">Madrid</text>
+
+      <!-- Buenos Aires -->
+      <circle cx="108" cy="352" r="5" fill="#8b4513" stroke="#fff" stroke-width="1.5"/>
+      <text x="118" y="356" font-size="9" fill="#5c2500">Buenos Aires</text>
+
+      <!-- Stuttgart -->
+      <circle cx="447" cy="91" r="5" fill="#3d5166" stroke="#fff" stroke-width="1.5"/>
+      <text x="455" y="95" font-size="9" fill="#1e2e40">Stuttgart</text>
+
+      <!-- Barcelona -->
+      <circle cx="482" cy="160" r="5" fill="#c9922b" stroke="#fff" stroke-width="1.5"/>
+      <text x="488" y="157" font-size="9" fill="#7a5500">Barcelona</text>
+
+      <!-- London -->
+      <circle cx="303" cy="68" r="5" fill="#a63d2f" stroke="#fff" stroke-width="1.5"/>
+      <text x="312" y="65" font-size="9" fill="#6a1a10">London</text>
+
+      <!-- Seville -->
+      <circle cx="330" cy="244" r="5" fill="#4a3575" stroke="#fff" stroke-width="1.5"/>
+      <text x="338" y="248" font-size="9" fill="#2a1555">Seville</text>
+
+      <!-- ── LEGEND ── -->
+      <rect x="600" y="30" width="280" height="230" fill="rgba(245,237,218,0.92)" rx="2" stroke="#b09060" stroke-width="1"/>
+      <text x="615" y="52" font-size="11" font-weight="bold" fill="#3a2c12" letter-spacing="1">LEGEND</text>
+      <line x1="615" y1="58" x2="870" y2="58" stroke="#b09060" stroke-width="0.8"/>
+
+      <line x1="620" y1="80" x2="655" y2="80" stroke="#8b4513" stroke-width="2" stroke-dasharray="5,3"/>
+      <text x="665" y="84" font-size="10" fill="#3a2c12">1. Manuel → Buenos Aires (1912)</text>
+
+      <line x1="620" y1="105" x2="655" y2="105" stroke="#5c6b3a" stroke-width="2" stroke-dasharray="5,3"/>
+      <text x="665" y="109" font-size="10" fill="#3a2c12">2. Rosario → Madrid (1952)</text>
+
+      <line x1="620" y1="130" x2="655" y2="130" stroke="#3d5166" stroke-width="2" stroke-dasharray="5,3"/>
+      <text x="665" y="134" font-size="10" fill="#3a2c12">3. Francisco &amp; Carmen → Stuttgart (1964)</text>
+
+      <line x1="620" y1="155" x2="655" y2="155" stroke="#c9922b" stroke-width="2" stroke-dasharray="5,3"/>
+      <text x="665" y="159" font-size="10" fill="#3a2c12">4. Rafael → Barcelona (1983)</text>
+
+      <line x1="620" y1="180" x2="655" y2="180" stroke="#a63d2f" stroke-width="2" stroke-dasharray="5,3"/>
+      <text x="665" y="184" font-size="10" fill="#3a2c12">5. Lucía → London (2004)</text>
+
+      <line x1="620" y1="205" x2="655" y2="205" stroke="#4a3575" stroke-width="2" stroke-dasharray="5,3"/>
+      <text x="665" y="209" font-size="10" fill="#3a2c12">6. Sofía → Seville (2022)</text>
+
+      <circle cx="635" cy="235" r="5" fill="#c9922b" stroke="#fff" stroke-width="1.5"/>
+      <text x="648" y="239" font-size="10" fill="#3a2c12">Origin: Cáceres (hub)</text>
+
+      <!-- Atlantic label -->
+      <text x="215" y="275" text-anchor="middle" font-size="11" fill="#4a7090" font-style="italic" opacity="0.7">Atlantic Ocean</text>
+      <!-- Mediterranean -->
+      <text x="440" y="300" text-anchor="middle" font-size="10" fill="#4a7090" font-style="italic" opacity="0.6">Mediterranean Sea</text>
+    </svg>
+  </div>
+</div>
+
+<!-- ─── CLASSIFICATION TABLE ─────────────────── -->
+<h2 class="section-title">Migration <span>Classification</span></h2>
+<div class="section-rule"></div>
+
+<div class="class-section">
+  <table>
+    <thead>
+      <tr>
+        <th>Person</th>
+        <th>Decade</th>
+        <th>Route</th>
+        <th>Cause</th>
+        <th>Character</th>
+        <th>Space</th>
+        <th>Duration</th>
+        <th>Historical Type</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Manuel Jiménez</td>
+        <td>1910s</td>
+        <td>Cáceres → Argentina</td>
+        <td>Economic</td>
+        <td><span class="type-badge tag-vol">Voluntary</span></td>
+        <td><span class="type-badge tag-int">International</span></td>
+        <td><span class="type-badge tag-def">Permanent</span></td>
+        <td>Transoceanic Migration (late 19th–early 20th c.)</td>
+      </tr>
+      <tr>
+        <td>Rosario Rivero</td>
+        <td>1950s</td>
+        <td>Malpartida → Madrid</td>
+        <td>Economic + family</td>
+        <td><span class="type-badge tag-vol">Voluntary</span></td>
+        <td><span class="type-badge tag-nat">National</span></td>
+        <td><span class="type-badge tag-def">Permanent</span></td>
+        <td>Rural Exodus (Éxodo Rural, 1950s–70s)</td>
+      </tr>
+      <tr>
+        <td>Francisco &amp; Carmen</td>
+        <td>1960s</td>
+        <td>Navalmoral → Stuttgart</td>
+        <td>Economic (labour)</td>
+        <td><span class="type-badge tag-vol">Voluntary</span></td>
+        <td><span class="type-badge tag-int">International</span></td>
+        <td><span class="type-badge tag-temp">Temporary → return</span></td>
+        <td>Migration to Western Europe (Desarrollismo, 1960–73)</td>
+      </tr>
+      <tr>
+        <td>Rafael Jiménez</td>
+        <td>1980s</td>
+        <td>Cáceres → Barcelona</td>
+        <td>Economic (construction)</td>
+        <td><span class="type-badge tag-vol">Voluntary</span></td>
+        <td><span class="type-badge tag-nat">National</span></td>
+        <td><span class="type-badge tag-def">Permanent</span></td>
+        <td>Internal Interregional Migration (post-Transition)</td>
+      </tr>
+      <tr>
+        <td>Lucía Rivero</td>
+        <td>2000s</td>
+        <td>Cáceres → London</td>
+        <td>Professional</td>
+        <td><span class="type-badge tag-vol">Voluntary</span></td>
+        <td><span class="type-badge tag-int">International</span></td>
+        <td><span class="type-badge tag-def">Permanent</span></td>
+        <td>Contemporary Qualified Migration (EU free movement)</td>
+      </tr>
+      <tr>
+        <td>Sofía Jiménez</td>
+        <td>2020s</td>
+        <td>Cáceres → Seville</td>
+        <td>Education</td>
+        <td><span class="type-badge tag-vol">Voluntary</span></td>
+        <td><span class="type-badge tag-nat">National</span></td>
+        <td><span class="type-badge tag-temp">Temporary</span></td>
+        <td>Contemporary Student Migration (urban attraction)</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ─── FOOTER ───────────────────────────────── -->
+<footer>
+  <div class="ornament">⚓</div>
+  <div class="author">Alejandro Jiménez Rivero</div>
+  <div class="meta">My Family Migrations &nbsp;·&nbsp; Submission date: 28 / 04 / 2026 &nbsp;·&nbsp; Geography &amp; Social Studies</div>
+  <div style="margin-top:28px; font-family:'Crimson Text',serif; font-size:1rem; color:rgba(245,237,218,0.35); font-style:italic; max-width:540px; margin-left:auto; margin-right:auto;">
+    "Every family is a living map — each migration a line drawn by necessity, courage, or hope."
+  </div>
+</footer>
+
+<!-- ─── MODALS ────────────────────────────────── -->
+<div class="modal-overlay" id="modal-overlay" onclick="closeModal(event)">
+  <div class="modal" id="modal-box">
+    <div class="modal-header">
+      <button class="modal-close" onclick="closeModal(null)">✕</button>
+      <div id="modal-era" style="font-family:'DM Sans',sans-serif;font-size:0.7rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--sepia);margin-bottom:6px;"></div>
+      <div id="modal-name" style="font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;"></div>
+      <div id="modal-relation" style="font-style:italic;color:var(--sepia);margin-top:2px;"></div>
+    </div>
+    <div class="modal-body">
+      <div class="modal-grid" id="modal-facts"></div>
+      <div class="modal-section" style="margin-top:20px;" id="modal-story-wrap">
+        <h4>Story</h4>
+        <p id="modal-story"></p>
+      </div>
+      <div class="modal-section" id="modal-classif-wrap">
+        <h4>Classification</h4>
+        <p id="modal-classif"></p>
+      </div>
+      <div class="hist-box" id="modal-hist-box">
+        <h4>📚 Historical Context</h4>
+        <p id="modal-hist"></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const data = {
+  m1: {
+    era: 'c. 1912 · Transoceanic Wave',
+    name: 'Manuel Jiménez García',
+    relation: 'Great-great-grandfather (bisabuelo)',
+    facts: [
+      {l:'Origin', v:'Cáceres, Extremadura'},
+      {l:'Destination', v:'Buenos Aires, Argentina'},
+      {l:'Approximate date', v:'c. 1912 (aged ~22)'},
+      {l:'Occupation', v:'Ranch worker, then small shop owner'},
+      {l:'Travelled with', v:'Alone; wife joined later'},
+      {l:'Return?', v:'No — settled permanently'},
+      {l:'Cause', v:'Economic (poverty, landlessness)'},
+      {l:'Character', v:'Voluntary, international, permanent'},
+    ],
+    story: 'Manuel left Cáceres during the peak years of Spanish transatlantic emigration. The rural south and west of Spain suffered extreme poverty and latifundio landlessness. He sailed from Vigo on a steam liner, a three-week crossing. In Argentina he joined the hundreds of thousands of Spaniards who settled the pampas. Starting as a peón on a cattle estancia, he later opened a grocery (almacén) in a Buenos Aires suburb with two other emigrants from Extremadura. He married a Galician emigrant and raised five children. His letters home, now lost, described homesickness but also pride in building something from nothing. He died in 1958 without returning to Spain.',
+    classif: 'Voluntary migration · Economic cause · International space · Permanent duration. Coincides with the great transoceanic Spanish emigration (c. 1880–1930): some 4 million Spaniards emigrated to Latin America during this period, predominantly to Argentina, Cuba, Brazil, and Uruguay.',
+    hist: 'Between 1880 and 1930 roughly four million Spaniards emigrated to Latin America. Argentina received the largest share, especially from Galicia and the Atlantic coast, but Extremadura was also significantly represented. The emigrants were mostly young rural men escaping agricultural poverty, lack of land reform, and military service. Many would never see Spain again, yet they maintained strong community bonds through cultural associations (Casas Regionales) abroad.'
+  },
+  m2: {
+    era: 'c. 1952 · Rural Exodus',
+    name: 'Rosario Rivero Campos',
+    relation: 'Great-grandmother (bisabuela)',
+    facts: [
+      {l:'Origin', v:'Malpartida de Cáceres'},
+      {l:'Destination', v:'Vallecas, Madrid'},
+      {l:'Approximate date', v:'c. 1952 (aged ~38)'},
+      {l:'Occupation', v:'Domestic servant (empleada del hogar)'},
+      {l:'Travelled with', v:'Her three children'},
+      {l:'Return?', v:'No — only holiday visits'},
+      {l:'Cause', v:'Economic + widowhood'},
+      {l:'Character', v:'Voluntary, national, permanent'},
+    ],
+    story: 'When Rosario\'s husband died of tuberculosis in 1951, she was left with three children and almost no income. Malpartida offered her little: agricultural wages were miserable and there was no welfare state. A neighbour who had already moved to Madrid helped her find a job as a live-in maid with a middle-class family in the Salamanca district. She left within months, taking the children on the RENFE train to Atocha. They settled in Vallecas, one of Madrid\'s working-class districts that was swelling with Extremaduran and Andalusian migrants. Her children all stayed in Madrid and integrated fully into urban life.',
+    classif: 'Voluntary migration · Economic cause (with a push factor: widowhood) · National-internal space · Permanent duration. Coincides with the rural exodus (éxodo rural) of the 1950s–1970s, when Spain\'s industrialisation drew millions from the countryside to cities like Madrid, Barcelona, and Bilbao.',
+    hist: 'The Spanish rural exodus accelerated under the Francoist developmentalism (desarrollismo) of the late 1950s and 1960s. Between 1950 and 1975, some 5 million Spaniards moved from rural areas to urban centres. Extremadura was one of the regions most heavily depopulated: it lost almost a third of its population. Madrid, Barcelona, and the Basque Country were the main destinations. These migrants built the modern working-class neighbourhoods of Vallecas, Carabanchel, and Hospitalet, often in substandard housing (chabolas) that was later replaced by social housing blocks.'
+  },
+  m3: {
+    era: '1964 · Guest Worker Era',
+    name: 'Francisco & Carmen Jiménez',
+    relation: 'Great-uncle and great-aunt (tío y tía bisabuelos)',
+    facts: [
+      {l:'Origin', v:'Navalmoral de la Mata, Cáceres'},
+      {l:'Destination', v:'Stuttgart, Germany'},
+      {l:'Date', v:'1964 (Francisco aged 29, Carmen 27)'},
+      {l:'Occupation', v:'Assembly line worker; hotel cleaner'},
+      {l:'Travelled with', v:'Together, children followed later'},
+      {l:'Return?', v:'Yes — retired to Spain 1986'},
+      {l:'Cause', v:'Economic (labour contracts)'},
+      {l:'Character', v:'Voluntary, international, long-term temporary'},
+    ],
+    story: 'Francisco heard about the Spanish-German bilateral labour agreement through his local employment office (Delegación de Trabajo). The process was bureaucratic but the offer was clear: a contract, housing in a workers\' hostel, and wages many times higher than anything available in Navalmoral. He signed in 1964 and left on the so-called "train of emigrants" (tren de emigrantes) to Stuttgart. Carmen joined him six months later. Francisco worked on an assembly line at a Daimler-Benz plant in Untertürkheim for 18 years. Carmen cleaned hotel rooms. Neither spoke German beyond a few words for years. They raised their children between Stuttgart and Navalmoral (summers), a classic transnational family life. In 1986, with a pension and savings, they returned and built a house in Navalmoral.',
+    classif: 'Voluntary migration · Economic cause · International space · Long-term temporary (22 years, with return). Coincides with the Spanish migration to Western Europe (1960–1973): approximately 2 million Spaniards emigrated to France, Germany, Switzerland, and Belgium during the Francoist developmentalism era.',
+    hist: 'Between 1960 and 1973 approximately two million Spaniards emigrated to Western Europe under bilateral labour agreements with France (1961), Germany (1960), Switzerland (1961), and Belgium (1956). The Francoist government encouraged emigration to relieve unemployment and to bring in remittances (divisas) that financed the economic miracle. Germany received the largest contingent of Spanish workers, mostly in heavy industry and car manufacturing. After the 1973 oil crisis, most host countries froze new labour contracts, and return migration accelerated through the 1980s.'
+  },
+  m4: {
+    era: '1983 · Post-Transition Spain',
+    name: 'Rafael Jiménez Moreno',
+    relation: 'Grandfather (abuelo)',
+    facts: [
+      {l:'Origin', v:'Cáceres city'},
+      {l:'Destination', v:'Barcelona (later Hospitalet de Llobregat)'},
+      {l:'Date', v:'1983 (aged 28)'},
+      {l:'Occupation', v:'Construction worker → foreman'},
+      {l:'Travelled with', v:'Alone first; family joined 1984'},
+      {l:'Return?', v:'No — retired in Catalonia'},
+      {l:'Cause', v:'Economic (construction sector boom)'},
+      {l:'Character', v:'Voluntary, national (interregional), permanent'},
+    ],
+    story: 'By 1983, Spain had transitioned to democracy and was approaching EEC membership. Barcelona\'s construction sector was booming. Rafael, who had trained as an albañil (bricklayer), followed a friend who had already found work there. He lived in a pension in the Nou Barris district for a year, sending money home, then brought his wife and young son once he had secured stable employment and a rented flat. Over the years he rose to foreman on large building projects. He retired in Hospitalet de Llobregat, where he still lives. Cáceres is a place he visits, but not home.',
+    classif: 'Voluntary migration · Economic cause · National-interregional space · Permanent duration. Typical of the continued internal migration from Extremadura (and other less-industrialised regions) to Catalonia and Madrid through the 1980s and 1990s.',
+    hist: 'Even after the rural exodus peak of the 1950s–70s, internal migration continued from Spain\'s less-industrialised regions (Extremadura, Murcia, Andalusia, Castile) toward Catalonia, Madrid, and the Basque Country. The construction sector was a major draw. Extremadura remained one of Spain\'s least-developed regions well into the 1990s, with emigration acting as a structural safety valve. Barcelona\'s metropolitan area today has hundreds of thousands of residents of Extremaduran origin.'
+  },
+  m5: {
+    era: '2004 · EU Free Movement',
+    name: 'Lucía Rivero Sánchez',
+    relation: 'Aunt (tía)',
+    facts: [
+      {l:'Origin', v:'Cáceres city'},
+      {l:'Destination', v:'London, United Kingdom'},
+      {l:'Date', v:'2004 (aged 23)'},
+      {l:'Occupation', v:'Hotel management (tourism graduate)'},
+      {l:'Travelled with', v:'Alone'},
+      {l:'Return?', v:'No — permanent resident (post-Brexit ILR)'},
+      {l:'Cause', v:'Professional (career opportunity)'},
+      {l:'Character', v:'Voluntary, international, permanent'},
+    ],
+    story: 'Lucía graduated in Tourism from the University of Extremadura in Cáceres and immediately applied for positions in London, where she had spent a summer as an Erasmus student. She was hired by an international hotel chain in the City of London. Over two decades she progressed to revenue manager. After Brexit she applied for and received indefinite leave to remain (ILR). She lives in Brixton with her British-Nigerian partner. She visits Cáceres twice a year and still cheers for Extremadura in regional football. Her migration represents the wave of qualified young Spaniards — especially after the 2008 crisis — who sought careers in larger European cities.',
+    classif: 'Voluntary migration · Professional/economic cause · International space · Permanent duration. Representative of contemporary skilled migration from Spain to Europe, intensified after the 2008 financial crisis but beginning earlier thanks to EU free movement.',
+    hist: 'Since Spain\'s integration into the European Community (1986) and especially after the Schengen area expanded free movement, qualified young Spaniards have increasingly moved to the UK, Germany, France, and the Netherlands for professional reasons. This migration accelerated sharply after the 2008 financial crisis: between 2008 and 2015, over 500,000 Spaniards registered in European countries. Unlike the 1960s guest workers who were predominantly unskilled, this wave is largely university-educated. Brexit (2020) introduced new administrative hurdles but did not reverse the trend.'
+  },
+  m6: {
+    era: '2022 · Present Day',
+    name: 'Sofía Jiménez Torres',
+    relation: 'Cousin (prima)',
+    facts: [
+      {l:'Origin', v:'Cáceres city'},
+      {l:'Destination', v:'Seville, Andalusia'},
+      {l:'Date', v:'2022 (aged 18)'},
+      {l:'Occupation', v:'Architecture student (University of Seville)'},
+      {l:'Travelled with', v:'Alone (shared flat)'},
+      {l:'Return?', v:'Undecided — temporary for now'},
+      {l:'Cause', v:'Education'},
+      {l:'Character', v:'Voluntary, national (interregional), temporary'},
+    ],
+    story: 'Sofía\'s story is the most familiar to her generation. She passed the Selectividad (university entrance exams) in Cáceres and applied to the prestigious School of Architecture in Seville, one of Spain\'s most competitive. She moved in September 2022 into a shared flat (piso compartido) in the Triana district with three other students from different Spanish regions. She returns to Cáceres for Christmas, Easter, and summer. Whether she will settle in Seville or move elsewhere after graduating is uncertain — she is considering a Master\'s in the Netherlands. Her migration illustrates the strong pull that large Spanish cities exert on students from medium-sized Extremaduran cities, and the risk of a "brain drain" from the region.',
+    classif: 'Voluntary migration · Educational cause · National-interregional space · Temporary duration (at least during studies). Coincides with contemporary migration patterns in developed countries, where university education drives significant short-to-medium-term mobility between cities.',
+    hist: 'Today, the main attraction for young people from Extremadura is not emigration abroad but movement toward large Spanish cities. Seville, Madrid, and Barcelona concentrate the most prestigious universities and employment opportunities. This student migration is statistically significant: Extremadura consistently ranks among Spain\'s regions with the highest emigration rates relative to its population. The phenomenon raises concerns about demographic decline in smaller cities and towns. However, improved transport (high-speed train) and digital connectivity soften the cultural rupture compared to previous generations.'
+  }
+};
+
+function openModal(id) {
+  const d = data[id];
+  document.getElementById('modal-era').textContent = d.era;
+  document.getElementById('modal-name').textContent = d.name;
+  document.getElementById('modal-relation').textContent = d.relation;
+  document.getElementById('modal-story').textContent = d.story;
+  document.getElementById('modal-classif').textContent = d.classif;
+  document.getElementById('modal-hist').textContent = d.hist;
+  const fg = document.getElementById('modal-facts');
+  fg.innerHTML = d.facts.map(f=>`<div class="modal-fact"><span class="label">${f.l}</span><span class="value">${f.v}</span></div>`).join('');
+  const ov = document.getElementById('modal-overlay');
+  ov.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal(e) {
+  if (e && e.target !== document.getElementById('modal-overlay')) return;
+  document.getElementById('modal-overlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+// Intersection observer for card reveal
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+}, { threshold: 0.15 });
+document.querySelectorAll('.migration').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
